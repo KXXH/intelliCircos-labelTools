@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Flask instance folder
+instance/
+
+# Distribution / packaging
+dist/
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Logs
+*.log
+
+# Database
+*.sqlite

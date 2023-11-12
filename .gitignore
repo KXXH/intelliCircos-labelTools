@@ -1,0 +1,10 @@
+/tags/*
+/images/*
+
+
+*.log
+*.cache
+*.pyc
+.DS_Store
+node_modules/
+dist/
