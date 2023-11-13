@@ -1,3 +1,3 @@
-# IntelliCircos-Tagtools
+# IntelliCircos-Labeltools
 
 IntelliCircos数据集的标注工具
