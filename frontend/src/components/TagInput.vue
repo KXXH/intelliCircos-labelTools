@@ -11,6 +11,7 @@
       <p>y: tile</p>
       <p>u: glyph</p>
       <p>i: ideogram</p>
+      <p>o: unknown</p>
       <p>Tab: split</p>
       <p>Delete: remove</p>
     </div>
@@ -93,6 +94,7 @@ onKeyStroke('t', (e) => insertTag(e, '<link>'))
 onKeyStroke('y', (e) => insertTag(e, '<tile>'))
 onKeyStroke('u', (e) => insertTag(e, '<glyph>'))
 onKeyStroke('i', (e) => insertTag(e, '<ideogram>'))
+onKeyStroke('o', (e) => insertTag(e, '<unknown>'))
 onKeyStroke('Tab', (e) => insertTag(e, '<split>'))
 onKeyStroke('Delete', (e) => removeTag(e))
 </script>
