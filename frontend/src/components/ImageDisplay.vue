@@ -37,6 +37,12 @@ const imageBaseURL = computed(() => {
   return new URL(path, host).href
 })
 
+const paperBaseURL = computed(() => {
+  const host = settingsStore.settings.host
+  const path = '/papers/from_image/'
+  return new URL(path, host).href
+})
+
 // props
 const props = defineProps(['images', 'currentImageId'])
 
@@ -57,7 +63,7 @@ function nextImage() {
 }
 
 function showFullImage(imageName) {
-  window.open(`${imageBaseURL.value}${imageName}`)
+  window.open(`${paperBaseURL.value}${imageName}`)
 }
 
 // 快捷键处理

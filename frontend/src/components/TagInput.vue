@@ -82,7 +82,6 @@ function removeTag(e) {
   nextTick().then(() => {
     textarea.value.setSelectionRange(newCursorPos, newCursorPos)
   })
-  // textarea.value.setSelectionRange(newCursorPos, newCursorPos)
 }
 
 // 快捷键处理
