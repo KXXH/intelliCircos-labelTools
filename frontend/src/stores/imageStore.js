@@ -7,7 +7,10 @@ import { defineStore } from 'pinia'
 export const useImageStore = defineStore('image', () => {
   const images = ref([])
   const currentImageId = ref(0)
-  const currentImage = computed(() => images.value[currentImageId.value])
+  const currentImage = computed(() => {
+    const filtered = images.value.filter((image) => image.id === currentImageId.value)
+    return filtered.length ? filtered[0] : null
+  })
 
   const currentTag = ref('')
   let originalTag = ''
@@ -29,7 +32,8 @@ export const useImageStore = defineStore('image', () => {
   async function setCurrentImage(image) {
     await tagCurrentImage(currentTag.value)
     currentImageId.value = image.id
-    currentTag.value = await getImageTag(images.value[image.id].name)
+    const imageName = currentImage.value.name
+    currentTag.value = await getImageTag(imageName)
     originalTag = currentTag.value
   }
 
