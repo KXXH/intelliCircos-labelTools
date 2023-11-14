@@ -12,6 +12,7 @@
       <p>u: glyph</p>
       <p>i: ideogram</p>
       <p>o: unknown</p>
+      <p>p: highlight</p>
       <p>Tab: split</p>
       <p>Delete: remove</p>
     </div>
@@ -94,6 +95,7 @@ onKeyStroke('y', (e) => insertTag(e, '<tile>'))
 onKeyStroke('u', (e) => insertTag(e, '<glyph>'))
 onKeyStroke('i', (e) => insertTag(e, '<ideogram>'))
 onKeyStroke('o', (e) => insertTag(e, '<unknown>'))
+onKeyStroke('p', (e) => insertTag(e, '<highlight>'))
 onKeyStroke('Tab', (e) => insertTag(e, '<split>'))
 onKeyStroke('Delete', (e) => removeTag(e))
 </script>
@@ -113,6 +115,9 @@ onKeyStroke('Delete', (e) => removeTag(e))
 }
 
 .tag-input__hint {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: min-content;
   font-size: small;
 }
 </style>

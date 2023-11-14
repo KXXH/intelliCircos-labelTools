@@ -31,6 +31,7 @@ export const useImageStore = defineStore('image', () => {
 
   async function setCurrentImage(image) {
     await tagCurrentImage(currentTag.value)
+    if (image.id < images.value[0].id) return
     currentImageId.value = image.id
     const imageName = currentImage.value.name
     currentTag.value = await getImageTag(imageName)
