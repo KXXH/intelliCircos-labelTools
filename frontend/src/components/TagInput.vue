@@ -46,7 +46,9 @@ function insertTag(e, insertValue) {
   const newText = tag.value.slice(0, start) + insertValue + tag.value.slice(end)
   tag.value = newText
   textarea.value.focus()
-  textarea.value.setSelectionRange(start + insertValue.length, start + insertValue.length)
+  nextTick(() =>
+    textarea.value.setSelectionRange(start + insertValue.length, start + insertValue.length)
+  )
 }
 
 function removeTag(e) {
