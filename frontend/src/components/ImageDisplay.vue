@@ -2,9 +2,9 @@
   <div class="image-display">
     <img
       class="image-display__image"
-      :src="imageBaseURL + (images[currentImageId]?.name ?? 'null')"
+      :src="imageBaseURL + (currentImage?.name ?? 'null')"
       alt=""
-      @click="() => showFullImage(images[currentImageId]?.name ?? 'null')"
+      @click="() => showFullImage(currentImage?.name ?? 'null')"
     />
     <div class="image-display__nav">
       <button
@@ -43,6 +43,10 @@ const paperBaseURL = computed(() => {
   return new URL(path, host).href
 })
 
+const currentImage = computed(() => {
+  return props.images.find((image) => image.id === props.currentImageId)
+})
+
 // props
 const props = defineProps(['images', 'currentImageId'])
 
@@ -51,13 +55,13 @@ const emits = defineEmits(['update:currentImageId'])
 
 // 方法
 function previousImage() {
-  if (props.currentImageId > 0) {
+  if (props.currentImageId > props.images[0].id) {
     emits('update:currentImageId', props.currentImageId - 1)
   }
 }
 
 function nextImage() {
-  if (props.currentImageId < props.images.length - 1) {
+  if (props.currentImageId < props.images[props.images.length - 1].id) {
     emits('update:currentImageId', props.currentImageId + 1)
   }
 }
