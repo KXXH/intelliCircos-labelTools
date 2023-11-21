@@ -39,7 +39,6 @@ async function onImageIDChange(imageId) {
 <style scoped>
 header {
   width: 100vw;
-  border: 1px solid #ccc;
 }
 
 main {
@@ -62,15 +61,18 @@ main {
   flex: 1;
   gap: 1rem;
   align-items: center;
+  margin: 0 auto;
 }
 
 .image-display {
+  @apply px-5;
   flex: 1;
   width: 100%;
+  max-width: 800px;
 }
 
 .tag-input {
   width: 100%;
-  margin-bottom: 1rem;
+  @apply px-5;
 }
 </style>

@@ -12,14 +12,14 @@
         @click="previousImage"
         :disabled="currentImageId === 0"
       >
-        Prev
+        <div class="i-ph:arrow-left-bold"></div>
       </button>
       <button
         class="image-display__nav__button image-display__nav__button--next"
         @click="nextImage"
         :disabled="currentImageId === images.length - 1"
       >
-        Next
+        <div class="i-ph:arrow-right-bold"></div>
       </button>
     </div>
   </div>
@@ -81,7 +81,6 @@ onKeyStroke('ArrowDown', nextImage)
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background-color: #eee;
 }
 
 .image-display__nav {

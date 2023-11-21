@@ -13,8 +13,8 @@
         {{ image.name }}
       </div>
       <div class="image-list__item__status">
-        <span v-if="image.tagged">✅</span>
-        <span v-else>❌</span>
+        <span v-if="image.tagged"><div class="i-ph:check-circle-fill text-xl c-green"></div></span>
+        <span v-else><div class="i-ph:x-circle-fill text-xl c-red"></div></span>
       </div>
     </div>
   </div>
@@ -61,6 +61,7 @@ watch(
 
 <style scoped>
 .image-list {
+  @apply bg-white;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -77,11 +78,11 @@ watch(
 }
 
 .image-list__item--active {
-  background-color: #ccc !important;
+  @apply bg-gray-300 cursor-pointer;
 }
 
 .image-list__item:hover {
-  background-color: #eee;
+  @apply bg-gray-300;
 }
 
 .image-list__item__name {
@@ -89,5 +90,7 @@ watch(
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 25ch;
+  flex: 1;
+  margin-right: 10px;
 }
 </style>

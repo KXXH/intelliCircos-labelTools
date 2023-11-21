@@ -1,7 +1,7 @@
 /tags/*
 /images/*
 
-
+.vscode/*
 *.log
 *.cache
 *.pyc

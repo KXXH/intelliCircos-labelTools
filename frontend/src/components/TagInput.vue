@@ -1,20 +1,22 @@
 <template>
   <div class="tag-input">
-    <textarea class="tag-input__textarea" v-model="tag" ref="textarea"></textarea>
-    <div class="tag-input__hint">
-      <p>快捷键</p>
-      <p>q: line</p>
-      <p>w: scatter</p>
-      <p>e: heatmap</p>
-      <p>r: bar</p>
-      <p>t: link</p>
-      <p>y: tile</p>
-      <p>u: glyph</p>
-      <p>i: ideogram</p>
-      <p>o: unknown</p>
-      <p>p: highlight</p>
-      <p>Tab: split</p>
-      <p>Delete: remove</p>
+    <div class="tag-input__container">
+      <textarea class="tag-input__textarea" v-model="tag" ref="textarea"></textarea>
+      <div class="tag-input__hint">
+        <p>快捷键</p>
+        <p>q: line</p>
+        <p>w: scatter</p>
+        <p>e: heatmap</p>
+        <p>r: bar</p>
+        <p>t: link</p>
+        <p>y: tile</p>
+        <p>u: glyph</p>
+        <p>i: ideogram</p>
+        <p>o: unknown</p>
+        <p>p: highlight</p>
+        <p>Tab: split</p>
+        <p>Delete: remove</p>
+      </div>
     </div>
   </div>
 </template>
@@ -104,16 +106,22 @@ onKeyStroke('Delete', (e) => removeTag(e))
 
 <style scoped>
 .tag-input {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  @apply bg-white border-t-1 border-t-solid border-gray-300;
+}
+
+.tag-input__container {
+  @apply flex flex-row justify-items-center gap-1rem p-1rem mx-auto;
+  max-width: 800px;
 }
 
 .tag-input__textarea {
+  @apply transition-all duration-500 bg-gray-100 rounded p-5px;
   flex: 1;
   resize: none;
+}
+
+.tag-input__textarea:focus {
+  @apply bg-white border-1 border-solid border-blue-500;
 }
 
 .tag-input__hint {
