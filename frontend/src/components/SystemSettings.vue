@@ -80,16 +80,18 @@ watch(
   --un-translate-y: -50%;
   width: 400px;
   height: 250px;
-  border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 1rem;
-  background-color: #fff;
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-primary) 50px,
+    #fff 50px
+  );
 }
 
 .settings__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  @apply text-xl font-bold w-full mb-4 text-white;
 }
 
 .settings__body {
