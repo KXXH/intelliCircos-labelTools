@@ -77,10 +77,15 @@ onKeyStroke('ArrowDown', nextImage)
 
 <style scoped>
 .image-display {
+  @apply overflow-hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.image-display img {
+  @apply overflow-hidden;
 }
 
 .image-display__nav {
